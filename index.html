@@ -718,26 +718,28 @@
 
           <div class="contact-content">
 
-            <form action="./index.html" method="post" class="contact-form">
+            <form id="contact-form" class="contact-form">
 
               <input type="text" name="name" placeholder="Full name" autocomplete="off" required class="input-field">
 
               <input type="email" name="email_address" placeholder="Email address" autocomplete="off" required
                 class="input-field">
+<small class="form-note">
+  Please double-check your email — I’ll reply here.
+</small>
 
               <input type="tel" name="phone" placeholder="Phone" autocomplete="off" class="input-field">
 
               <textarea name="message" placeholder="Enter massges" required class="input-field"></textarea>
 
-              <button type="submit" class="btn btn:hover">
+              <button type="submit" class="btn btn:hover" name="submit">
                 <span class="span">Send</span>
 
                 <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
               </button>
 
             </form>
-
-            
+      
             <ul class="contact-list">
 
               <ul class="about-list">
@@ -798,7 +800,7 @@
     <div class="container">
 
       <p class="copyright">
-        Lanisha Thomas
+        ❤꧁ღ⊱♥ Lanisha Thomas ♥⊱ღ꧂❤
       </p>
 
       <a href="#top" class="back-top-btn">
@@ -822,9 +824,6 @@
   <div class="cursor-outline" data-cursor></div>
 
 
-
-
-
   <!-- 
     - custom js link
   -->
@@ -835,7 +834,39 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- 
+    - mail response
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+  (function () {
+    emailjs.init("lc6P4VQk3evpwFVX4");
+  })();
+</script>
 
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_65qrosp",
+      "template_jleem0m",
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully 🚀");
+        form.reset();
+      },
+      function (error) {
+        alert("Failed to send message ❌");
+        console.error(error);
+      }
+    );
+  });
+</script>
+            
 </body>
 
 </html>
