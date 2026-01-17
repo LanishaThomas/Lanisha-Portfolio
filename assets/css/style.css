@@ -939,6 +939,9 @@ input:checked + .slider:before {
 /* ---------- Flip Card ---------- */
 .flip-card {
   perspective: 1200px;
+  transform-style: preserve-3d;
+  min-height: 220px;
+  transform-style: preserve-3d;
 }
 
 .flip-inner {
@@ -949,7 +952,13 @@ input:checked + .slider:before {
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-inner {
+@media (hover: hover) {
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-card.is-flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
@@ -958,24 +967,25 @@ input:checked + .slider:before {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 16px;
   padding: 22px;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
 }
 
-/* ---------- Front ---------- */
+/* Front */
 .flip-front {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* ---------- Back ---------- */
+/* Back */
 .flip-back {
   transform: rotateY(180deg);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* untouched */
   color: #fde68a;
   display: flex;
   flex-direction: column;
@@ -1041,32 +1051,33 @@ input:checked + .slider:before {
 
   /* Center the timeline line */
   .timeline-list::before {
-    left: 50%;
+    margin-top: 10px;
+    left: 0%;
     transform: translateX(-50%);
   }
 
   /* Keep items half-width */
   .timeline-item {
     width: 45%;
-    padding: 20px 15px;
+    padding: 15px 12px;
     position: relative;
   }
 
   /* LEFT items */
   .timeline-item.left {
-    left: 0;
+    left: -50;
     text-align: right;
   }
 
   /* RIGHT items */
   .timeline-item.right {
-    left: -50%;
+    left: 50%;
     text-align: left;
   }
 
   /* Center nodes exactly on the line */
   .timeline-node {
-    left: 0% !important;
+    left: 50% !important;
     transform: translateX(-50%);
     top: 28px;
   }
@@ -1075,9 +1086,6 @@ input:checked + .slider:before {
   .flip-card {
     margin-top: 12px;
   }
-.flip-card.is-flipped .flip-inner {
-  transform: rotateY(180deg);
-}
 
   .flip-front,
   .flip-back {
