@@ -467,6 +467,13 @@
   reveals.forEach(el => observer.observe(el));
 </script>
 
+<script>
+  document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("is-flipped");
+    });
+  });
+</script>
 
             <!-- 
         - #SERVICE

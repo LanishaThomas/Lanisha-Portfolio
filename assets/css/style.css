@@ -756,14 +756,14 @@ input:checked + .slider:before {
 
 .education-card .btn {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 90px;
   justify-content: center;
   border-radius: var(--radius-circle);
-  color: var(--text-smoky-black);
+  color: black;
 }
 
 .education-card .btn::before,
@@ -783,7 +783,7 @@ input:checked + .slider:before {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-circle);
-  color: var(--bg-smoky-black);
+  color: black;
   display: grid;
   place-items: center;
 }
@@ -936,20 +936,31 @@ input:checked + .slider:before {
 .timeline-item.left .timeline-node { right: -6px; }
 .timeline-item.right .timeline-node { left: -6px; }
 
-/* ---------- Flip Card ---------- */
 .flip-card {
   perspective: 1200px;
+  min-height: 220px;
+  cursor: pointer;
+ box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .flip-inner {
   position: relative;
   width: 100%;
   min-height: 200px;
-  transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
   transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
 }
 
-.flip-card:hover .flip-inner {
+/* Desktop hover */
+@media (hover: hover) {
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Mobile tap */
+.flip-card.is-flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
@@ -957,25 +968,26 @@ input:checked + .slider:before {
 .flip-back {
   position: absolute;
   inset: 0;
-  backface-visibility: hidden;
-  border-radius: 16px;
   padding: 22px;
-  background: rgba(255,255,255,0.06);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  background: rgb(0, 0, 0);
   backdrop-filter: blur(10px);
 }
 
-/* ---------- Front ---------- */
+/* Front */
 .flip-front {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* ---------- Back ---------- */
+/* Back */
 .flip-back {
   transform: rotateY(180deg);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* unchanged */
   color: #fde68a;
   display: flex;
   flex-direction: column;
@@ -1035,65 +1047,37 @@ input:checked + .slider:before {
   }
 }
 /* ===============================
-   MOBILE TIMELINE — CONTROLLED MODE
+   MOBILE — SINGLE SIDE TIMELINE
    =============================== */
 @media (max-width: 768px) {
 
-  /* Timeline container */
-  .timeline-list {
-    position: relative;
-    padding: 40px 0;
-  }
-
-  /* Center the vertical line */
+  /* Timeline line on left */
   .timeline-list::before {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
+    left: 18px;
+    transform: none;
   }
 
-  /* Reset desktop positioning logic */
+  /* Items stack */
   .timeline-item {
     width: 100%;
     left: 0;
-    padding: 30px 0;
-    position: relative;
-    display: flex;
-  }
-
-  /* LEFT cards */
-  .timeline-item.left {
-    justify-content: flex-end;
-    padding-right: 50%;
-    text-align: right;
-  }
-
-  /* RIGHT cards */
-  .timeline-item.right {
-    justify-content: flex-start;
-    padding-left: 50%;
+    padding-left: 60px;
+    padding-right: 16px;
     text-align: left;
   }
 
-  /* Center node on the line */
+  .timeline-item.left,
+  .timeline-item.right {
+    text-align: left;
+  }
+
+  /* Node aligned to line */
   .timeline-node {
-    position: absolute;
-    left: 50%;
-    top: 20px;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-
-  /* Card width */
-  .flip-card {
-    width: 85%;
-  }
-
-  /* Prevent line merging illusion */
-  .timeline-item:not(:last-child) {
-    margin-bottom: 40px;
+    left: 18px;
+    transform: none;
   }
 }
+
 
 
 /*-----------------------------------*\
