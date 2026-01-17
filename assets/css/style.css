@@ -1034,6 +1034,66 @@ input:checked + .slider:before {
     transform: none;
   }
 }
+/* ===============================
+   MOBILE TIMELINE — CONTROLLED MODE
+   =============================== */
+@media (max-width: 768px) {
+
+  /* Timeline container */
+  .timeline-list {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  /* Center the vertical line */
+  .timeline-list::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+  }
+
+  /* Reset desktop positioning logic */
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding: 30px 0;
+    position: relative;
+    display: flex;
+  }
+
+  /* LEFT cards */
+  .timeline-item.left {
+    justify-content: flex-end;
+    padding-right: 50%;
+    text-align: right;
+  }
+
+  /* RIGHT cards */
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  /* Center node on the line */
+  .timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  /* Card width */
+  .flip-card {
+    width: 85%;
+  }
+
+  /* Prevent line merging illusion */
+  .timeline-item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
 
 
 /*-----------------------------------*\
