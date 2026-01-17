@@ -831,13 +831,216 @@ input:checked + .slider:before {
 }
 
 
+/*-----------------------------------*\
+  #education timeline
+\*-----------------------------------*/
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+
+.education-section {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.timeline-container {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2,3rem; /* same scale */
+  color: #e5e7eb;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+/* ---------- Timeline ---------- */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(to top, #facc15, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 55px 40px;
+  position: relative;
+}
+
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
+
+.timeline-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.reveal.active .timeline-card {
+  transform: translateY(0);
+}
+/* ---------- Scroll Reveal ---------- */
+/* ---------- Scroll Reveal (Reversible) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Node glow syncs with reveal */
+.reveal .timeline-node {
+  box-shadow: none;
+  transition: box-shadow 0.4s ease;
+}
+
+.reveal.active .timeline-node {
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.9);
+}
+
+
+/* ---------- Node ---------- */
+.timeline-node {
+  position: absolute;
+  top: 40px;
+  width: 12px;
+  height: 12px;
+  background: #facc15;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(250,204,21,0.8);
+}
+
+.timeline-item.left .timeline-node { right: -6px; }
+.timeline-item.right .timeline-node { left: -6px; }
+
+/* ---------- Flip Card ---------- */
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 22px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+}
+
+/* ---------- Front ---------- */
+.flip-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ---------- Back ---------- */
+.flip-back {
+  transform: rotateY(180deg);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  color: #fde68a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ---------- Text ---------- */
+.timeline-icon { font-size: 40px; margin-bottom: 40px; }
+
+.timeline-institute {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  color: #60a5fa;
+  margin-top: 4px;
+}
+
+.timeline-text {
+  font-size: 1.2 rem;
+  color: #86efac;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---------- Footer ---------- */
+.timeline-footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 2 rem;
+  color: #d1d5db;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding-left: 60px;
+    text-align: left;
+  }
+
+  .timeline-list::before {
+    left: 20px;
+  }
+
+  .timeline-node {
+    left: 14px !important;
+  }
+
+  .flip-card:hover .flip-inner {
+    transform: none;
+  }
+}
 
 
 /*-----------------------------------*\
-  #PROJECT
+  #memory
 \*-----------------------------------*/
 
-.project-card .card-banner::before {
+.memory-card .card-banner::before {
   top: 0;
   left: 0;
   bottom: 0;
@@ -848,9 +1051,9 @@ input:checked + .slider:before {
   transition: var(--transition-1);
 }
 
-.project-card .card-banner:is(:hover, :focus-within)::before { opacity: 0.9; }
+.memory-card .card-banner:is(:hover, :focus-within)::before { opacity: 0.9; }
 
-.project-card .btn {
+.memory-card .btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -860,7 +1063,7 @@ input:checked + .slider:before {
   transition: var(--transition-2);
 }
 
-.project-card .card-banner:is(:hover, :focus-within) .btn {
+.memory-card .card-banner:is(:hover, :focus-within) .btn {
   transform: translate(-50%, -50%);
   opacity: 1;
 }
@@ -868,7 +1071,7 @@ input:checked + .slider:before {
   overflow: hidden;
 }
 
-.project-image {
+.memory-image {
   display: block;
   width: 100%;
   transition: opacity 0.3s ease;
@@ -894,20 +1097,20 @@ input:checked + .slider:before {
   opacity: 1;
 }
 
-.card-banner:hover .project-image {
+.card-banner:hover .memory-image {
   opacity: 0.3;
 }
 
-.project-card .card-content { padding: 24px 30px 0; }
+.memory-card .card-content { padding: 24px 30px 0; }
 
-.project-card .card-subtitle {
+.memory-card .card-subtitle {
   font-size: var(--fontSize-10);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-block-end: 10px;
 }
 
-.project-card .card-title {
+.memory-card .card-title {
   display: inline;
   background-image: linear-gradient(var(--bg-white), var(--bg-white));
   background-repeat: no-repeat;
@@ -916,7 +1119,7 @@ input:checked + .slider:before {
   transition: var(--transition-1);
 }
 
-.project-card .card-title:is(:hover, :focus-visible) { background-size: 100% 1px; }
+.memory-card .card-title:is(:hover, :focus-visible) { background-size: 100% 1px; }
 
 .slider-list {
   display: flex;
@@ -1304,7 +1507,7 @@ textarea.input-field {
 
 
   /**
-   * PROJECTS
+   * memoryS
    */
 
   .slider-item { min-width: calc(50% - 15px); }
@@ -1486,7 +1689,7 @@ textarea.input-field {
 
 
   /**
-   * PROJECTS
+   * memoryS
    */
 
   .slider-item { min-width: calc(33.33% - 20px); }

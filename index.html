@@ -81,17 +81,16 @@
           <li>
             <a href="#home" class="navbar-link" data-nav-link>Home</a>
           </li>
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
 
           <li>
             <a href="#service" class="navbar-link" data-nav-link>Hobbies</a>
           </li>
 
           <li>
-            <a href="#about" class="navbar-link" data-nav-link>About</a>
-          </li>
-
-          <li>
-            <a href="#project" class="navbar-link" data-nav-link>Memories</a>
+            <a href="#memory" class="navbar-link" data-nav-link>Memories</a>
           </li>
           <li>
             <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
@@ -344,143 +343,131 @@
             </div>
 
             <div class="tab-content" data-tab-content="education">
-              <div class="education-section">
-                <div class="timeline-container">
-                  <h2>
-                    From academic excellence to real-world learning, each milestone has shaped the engineer I’m becoming.
-                  </h2>
-            
-                  <ul class="timeline-list">
-            
-                    <!-- College -->
-                    <li class="timeline-item left">
-                      <div class="timeline-icon">🎓</div>
-                      <div class="timeline-content">
-                        <h3 class="timeline-institute">Fr. Conceicao Rodrigues College of Engineering</h3>
-                        <h4 class="timeline-title">B.Tech in Computer Engineering</h4>
-                        <span class="timeline-duration">2024 - Present | 9.55 SGPA (Sem 1)</span>
-                        <p class="timeline-text">
-                          Pursuing a major in Computer Engineering with minors in Communication and IoT.
-                        </p>
-                      </div>
-                    </li>
-            
-                    <!-- 12th -->
-                    <li class="timeline-item right">
-                      <div class="timeline-icon">🏫</div>
-                      <div class="timeline-content">
-                        <h3 class="timeline-institute">SIES College of Arts, Science and Commerce</h3>
-                        <h4 class="timeline-title">HSC - Higher Secondary Certificate</h4>
-                        <span class="timeline-duration">2022 - 2024 | 86.17%</span>
-                        <p class="timeline-text">
-                          Subjects: Physics, Chemistry, Biology, Mathematics & IT <br> 
-                          Highlights: Scored 95% in Math and IT | MHT-CET: 97.21 percentile
-                        </p>
-                      </div>
-                    </li>
-            
-                    <!-- 10th -->
-                    <li class="timeline-item left">
-                      <div class="timeline-icon">📘</div>
-                      <div class="timeline-content">
-                        <h3 class="timeline-institute">Our Lady of Good Counsel High School</h3>
-                        <h4 class="timeline-title">SSC - Secondary School Certificate</h4>
-                        <span class="timeline-duration">2012 - 2022 | 91.6%</span>
-                        
-                      </div>
-                    </li>
-            
-                  </ul>
-                  <br>
-                  <br>
-                  <h3>
-                    A solid academic foundation with a focus on STEM, creativity, and discipline.
-                  </h3>
-                </div>
+  <section class="education-section">
+    <div class="timeline-container">
+
+      <h2 class="timeline-heading">
+        From academic excellence to real-world learning, each milestone has shaped the engineer I’m becoming.
+      </h2>
+
+      <ul class="timeline-list">
+
+        <!-- College -->
+        <li class="timeline-item left reveal">
+          <div class="timeline-node"></div>
+
+          <div class="flip-card">
+            <div class="flip-inner">
+
+              <!-- FRONT -->
+              <div class="flip-front">
+                <div class="timeline-icon">🎓</div>
+                <h3 class="timeline-institute">Fr. Conceicao Rodrigues College of Engineering</h3>
+                <h4 class="timeline-title">B.Tech in Computer Engineering</h4>
+                <p class="timeline-text">
+                  Major in Computer Engineering with minors in Communication and IoT.
+                </p>
               </div>
+
+              <!-- BACK -->
+              <div class="flip-back">
+                <p><strong>Duration:</strong> 2024 – Present</p>
+                <p><strong>SGPA:</strong> 9.55 (Sem 1)</p>
+                <p><strong>Focus:</strong> Building scalable systems with practical IoT integration.</p>
+              </div>
+
             </div>
-            
-            <style>
-            .education-section {
-              display: flex;
-              justify-content: space-between;
-              align-items: flex-start;
-              gap: 40px;
-              flex-wrap: wrap;
-            }
-            
-            .timeline-container {
-              flex: 1;
-              position: relative;
-              padding-left: 20px;
-              padding-right: 20px;
-            }
-            
-            .timeline-list {
-              position: relative;
-              margin: 40px 0;
-              padding: 0;
-              list-style: none;
-            }
-            
-            .timeline-list::before {
-              content: "";
-              position: absolute;
-              left: 50%;
-              top: 0;
-              bottom: 0;
-              width: 4px;
-              background: yellow;
-              transform: translateX(-50%);
-            }
-            
-            .timeline-item {
-              position: relative;
-              width: 50%;
-              padding: 20px;
-              box-sizing: border-box;
-            }
-            
-            .timeline-item.left {
-              left: 0;
-              text-align: right;
-            }
-            
-            .timeline-item.right {
-              left: 50%;
-              text-align: left;
-            }
-            
-            .timeline-icon {
-              font-size: 24px;
-              margin-bottom: 10px;
-            }
-            .timeline-title {
-              color: blue;
-            }
-            
-            .timeline-text {
-              color: green;
-            }
-            
-            .timeline-duration {
-              color: red;
-              font-weight: bold;
-            }
-            
-            
-            .education-banner {
-              flex-shrink: 0;
-            }
-            </style>
-            
-
-            
-
           </div>
+        </li>
 
-        </div>
+        <!-- 12th -->
+        <li class="timeline-item right reveal">
+          <div class="timeline-node"></div>
+
+          <div class="flip-card">
+            <div class="flip-inner">
+
+              <div class="flip-front">
+                <div class="timeline-icon">🏫</div>
+                <h3 class="timeline-institute">SIES College of Arts, Science and Commerce</h3>
+                <h4 class="timeline-title">Higher Secondary Certificate (HSC)</h4>
+                <p class="timeline-text">
+                  Strong academic foundation across science and technology subjects.
+                </p>
+              </div>
+
+              <div class="flip-back">
+                <p><strong>Years:</strong> 2022 – 2024</p>
+                <p><strong>Score:</strong> 86.17%</p>
+                <p><strong>Highlights:</strong> 95% in Math & IT</p>
+                <p><strong>MHT-CET:</strong> 97.21 percentile</p>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+        <!-- 10th -->
+        <li class="timeline-item left reveal">
+          <div class="timeline-node"></div>
+
+          <div class="flip-card">
+            <div class="flip-inner">
+
+              <div class="flip-front">
+                <div class="timeline-icon">📘</div>
+                <h3 class="timeline-institute">Our Lady of Good Counsel High School</h3>
+                <h4 class="timeline-title">Secondary School Certificate (SSC)</h4>
+                <p class="timeline-text">
+                  A disciplined environment that nurtured analytical thinking, curiosity, and creativity.
+                </p>
+              </div>
+
+              <div class="flip-back">
+                <p><strong>Years:</strong> 2012 – 2022</p>
+                <p><strong>Score:</strong> 91.6%</p>
+                <p><strong>Foundation:</strong> learning + discipline</p>
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <h3 class="timeline-footer">
+        A solid academic foundation reinforced by consistency, curiosity, and growth.
+      </h3>
+
+    </div>
+  </section>
+</div>
+
       </section>
+
+
+      <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active");
+        }
+      });
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+
             <!-- 
         - #SERVICE
       -->
@@ -599,21 +586,21 @@
 
 
       <!-- 
-        - #PROJECTS
+        - #memories
       -->
 
-      <section class="section project" aria-label="my latest projects" id="project">
+      <section class="section memory" aria-label="my latest memories" id="memory">
         <h2 style="text-align: center; font-size: 5rem; font-weight: bold;">Captured Moments</h2>
         <br>
         <br>
 
         <ul class="slider-list" style="width: 200">
           <li class="slider-item">
-            <div class="project-card text-center">
+            <div class="memory-card text-center">
 
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/G5.jpg" width="1000" height="763" loading="lazy"
-                  alt="Project poster: Cloud Migration & AWS Services" class="img-cover">
+                  alt="photos" class="img-cover">
 
                 <div class="hover-text">What's better than appreciating art? Having your bestie capture you doing it.</div>
                 </div>
@@ -628,11 +615,11 @@
           </li>
 
           <li class="slider-item">
-            <div class="project-card text-center">
+            <div class="memory-card text-center">
 
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/G1.jpg" width="1000" height="763" loading="lazy"
-                  alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                  alt="photos" class="img-cover">
 
                 <div class="hover-text">Not lost, just in sync with the chaos of the sea.</div>
                 </div>
@@ -647,11 +634,11 @@
           </li>
 
           <li class="slider-item">
-            <div class="project-card text-center">
+            <div class="memory-card text-center">
 
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/G2.jpg" width="1000" height="763" loading="lazy"
-                  alt="Project poster: Front End Development & Maintenance" class="img-cover">
+                  alt="photos" class="img-cover">
 
                 <div class="hover-text">Just a twig… but it made me stop and wonder.</div>
                 </div>
@@ -665,11 +652,11 @@
             </div>
           </li>
           <li class="slider-item">
-            <div class="project-card text-center">
+            <div class="memory-card text-center">
 
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/G4.jpg" width="1000" height="763" loading="lazy"
-                  alt="Project poster: Full Web Development Project With JavaScript" class="img-cover">
+                  alt="photos" class="img-cover">
 
                 <div class="hover-text">Posing for one, caught by another</div>
                 </div>
@@ -682,11 +669,11 @@
             </div>
           </li>
           <li class="slider-item">
-            <div class="project-card text-center">
+            <div class="memory-card text-center">
 
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/G3.jpg" width="1000" height="763" loading="lazy"
-                  alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
+                  alt="photos" class="img-cover">
 
                 <div class="hover-text">Some moments don't need a filter-the vibes, the outfit, the memories.</div>
                 </div>
@@ -739,7 +726,39 @@
               </button>
 
             </form>
-      
+      <!-- 
+    - mail response
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+  (function () {
+    emailjs.init("lc6P4VQk3evpwFVX4");
+  })();
+</script>
+
+<script>
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_65qrosp",
+      "template_jleem0m",
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully 🚀");
+        form.reset();
+      },
+      function (error) {
+        alert("Failed to send message ❌");
+        console.error(error);
+      }
+    );
+  });
+</script>
+            
             <ul class="contact-list">
 
               <ul class="about-list">
@@ -834,39 +853,7 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!-- 
-    - mail response
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-  (function () {
-    emailjs.init("lc6P4VQk3evpwFVX4");
-  })();
-</script>
 
-<script>
-  const form = document.getElementById("contact-form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      "service_65qrosp",
-      "template_jleem0m",
-      this
-    ).then(
-      function () {
-        alert("Message sent successfully 🚀");
-        form.reset();
-      },
-      function (error) {
-        alert("Failed to send message ❌");
-        console.error(error);
-      }
-    );
-  });
-</script>
-            
 </body>
 
 </html>
