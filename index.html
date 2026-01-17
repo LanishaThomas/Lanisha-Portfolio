@@ -469,11 +469,24 @@
 
 <script>
   document.querySelectorAll(".flip-card").forEach(card => {
-    card.addEventListener("click", () => {
+
+    let isTouching = false;
+
+    card.addEventListener("touchstart", e => {
+      isTouching = true;
       card.classList.toggle("is-flipped");
+    }, { passive: true });
+
+    card.addEventListener("click", e => {
+      if (!isTouching) {
+        card.classList.toggle("is-flipped");
+      }
+      isTouching = false;
     });
+
   });
 </script>
+
 
             <!-- 
         - #SERVICE

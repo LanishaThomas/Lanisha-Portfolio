@@ -904,6 +904,7 @@ input:checked + .slider:before {
     opacity 0.6s ease,
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
+  pointer-events: auto;
 }
 
 .reveal.active {
