@@ -939,9 +939,6 @@ input:checked + .slider:before {
 /* ---------- Flip Card ---------- */
 .flip-card {
   perspective: 1200px;
-  transform-style: preserve-3d;
-  min-height: 220px;
-  transform-style: preserve-3d;
 }
 
 .flip-inner {
@@ -952,13 +949,7 @@ input:checked + .slider:before {
   transform-style: preserve-3d;
 }
 
-@media (hover: hover) {
-  .flip-card:hover .flip-inner {
-    transform: rotateY(180deg);
-  }
-}
-
-.flip-card.is-flipped .flip-inner {
+.flip-card:hover .flip-inner {
   transform: rotateY(180deg);
 }
 
@@ -967,25 +958,24 @@ input:checked + .slider:before {
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   border-radius: 16px;
   padding: 22px;
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(10px);
 }
 
-/* Front */
+/* ---------- Front ---------- */
 .flip-front {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Back */
+/* ---------- Back ---------- */
 .flip-back {
   transform: rotateY(180deg);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.5rem; /* untouched */
+  font-size: 1.5rem;
   color: #fde68a;
   display: flex;
   flex-direction: column;
@@ -1042,59 +1032,6 @@ input:checked + .slider:before {
 
   .flip-card:hover .flip-inner {
     transform: none;
-  }
-}
-/* ===============================
-   MOBILE — DOUBLE SIDED TIMELINE
-   =============================== */
-@media (max-width: 768px) {
-
-  /* Center the timeline line */
-  .timeline-list::before {
-    margin-top: 10px;
-    left: 0%;
-    transform: translateX(-50%);
-  }
-
-  /* Keep items half-width */
-  .timeline-item {
-    width: 45%;
-    padding: 15px 12px;
-    position: relative;
-  }
-
-  /* LEFT items */
-  .timeline-item.left {
-    left: -50;
-    text-align: right;
-  }
-
-  /* RIGHT items */
-  .timeline-item.right {
-    left: 50%;
-    text-align: left;
-  }
-
-  /* Center nodes exactly on the line */
-  .timeline-node {
-    left: 50% !important;
-    transform: translateX(-50%);
-    top: 28px;
-  }
-
-  /* Tighten cards for mobile */
-  .flip-card {
-    margin-top: 12px;
-  }
-
-  .flip-front,
-  .flip-back {
-    padding: 18px;
-  }
-
-  /* Slightly reduce 3D depth on mobile */
-  .flip-inner {
-    transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
   }
 }
 
