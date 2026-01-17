@@ -1034,40 +1034,56 @@ input:checked + .slider:before {
     transform: none;
   }
 }
-/* ---------- Mobile Timeline Fix ---------- */
+/* ===============================
+   MOBILE — DOUBLE SIDED TIMELINE
+   =============================== */
 @media (max-width: 768px) {
 
+  /* Center the timeline line */
   .timeline-list::before {
     left: 50%;
     transform: translateX(-50%);
   }
 
+  /* Keep items half-width */
   .timeline-item {
-    width: 100%;
+    width: 50%;
+    padding: 20px 12px;
+    position: relative;
+  }
+
+  /* LEFT items */
+  .timeline-item.left {
     left: 0;
-    padding: 20px 20px 40px;
-    text-align: center;
+    text-align: right;
   }
 
-  .timeline-item.left,
+  /* RIGHT items */
   .timeline-item.right {
-    text-align: center;
+    left: 50%;
+    text-align: left;
   }
 
+  /* Center nodes exactly on the line */
   .timeline-node {
     left: 50% !important;
     transform: translateX(-50%);
-    top: 24px;
+    top: 28px;
   }
 
+  /* Tighten cards for mobile */
   .flip-card {
-    margin-top: 24px;
+    margin-top: 12px;
   }
 
   .flip-front,
   .flip-back {
-    align-items: center;
-    text-align: center;
+    padding: 18px;
+  }
+
+  /* Slightly reduce 3D depth on mobile */
+  .flip-inner {
+    transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
   }
 }
 
