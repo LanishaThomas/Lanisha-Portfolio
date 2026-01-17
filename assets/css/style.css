@@ -1047,8 +1047,8 @@ input:checked + .slider:before {
 
   /* Keep items half-width */
   .timeline-item {
-    width: 50%;
-    padding: 20px 12px;
+    width: 45%;
+    padding: 15px 12px;
     position: relative;
   }
 
@@ -1060,7 +1060,7 @@ input:checked + .slider:before {
 
   /* RIGHT items */
   .timeline-item.right {
-    left: 50%;
+    left: -50%;
     text-align: left;
   }
 
