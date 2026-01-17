@@ -940,6 +940,9 @@ input:checked + .slider:before {
   perspective: 1200px;
   min-height: 220px;
   cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index:3;
  box-shadow: none;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1031,19 +1034,27 @@ input:checked + .slider:before {
     width: 100%;
     left: 0;
     padding-left: 60px;
+    padding-left: 16px;
     text-align: left;
   }
 
   .timeline-list::before {
     left: 20px;
+    transform: none;
+    pointer-events: none
   }
 
   .timeline-node {
-    left: 14px !important;
+    left: 14px;
+    pointer-events: none;
+    transform: none;
   }
 
   .flip-card:hover .flip-inner {
     transform: none;
+    pointer-events: auto;
+    position: relative;
+    z-index:3;
   }
 }
 /* ===============================
@@ -1068,16 +1079,18 @@ input:checked + .slider:before {
 
   .timeline-item.left,
   .timeline-item.right {
+    left:0;
     text-align: left;
+    margin-left: 0
   }
 
   /* Node aligned to line */
   .timeline-node {
     left: 18px;
     transform: none;
+    pointer-events: none;
   }
 }
-
 
 
 /*-----------------------------------*\
