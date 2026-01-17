@@ -1034,6 +1034,42 @@ input:checked + .slider:before {
     transform: none;
   }
 }
+/* ---------- Mobile Timeline Fix ---------- */
+@media (max-width: 768px) {
+
+  .timeline-list::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding: 20px 20px 40px;
+    text-align: center;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    text-align: center;
+  }
+
+  .timeline-node {
+    left: 50% !important;
+    transform: translateX(-50%);
+    top: 24px;
+  }
+
+  .flip-card {
+    margin-top: 24px;
+  }
+
+  .flip-front,
+  .flip-back {
+    align-items: center;
+    text-align: center;
+  }
+}
 
 
 /*-----------------------------------*\
