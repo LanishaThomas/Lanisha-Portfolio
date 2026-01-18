@@ -158,6 +158,8 @@ body {
   font-size: var(--fontSize-8);
   line-height: 1.75;
   overflow: hidden;
+  overflow-x: hidden;
+max-width:100%;
 }
 
 body.loaded { overflow-y: auto; }
