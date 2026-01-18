@@ -468,36 +468,29 @@
 </script>
 
 <script>
-  document.querySelectorAll(".flip-card").forEach(card => {
-
-    let isTouching = false;
-
-    card.addEventListener("touchstart", e => {
-      isTouching = true;
-      card.classList.toggle("is-flipped");
-    }, { passive: true });
-
-    card.addEventListener("click", e => {
-      if (!isTouching) {
-        card.classList.toggle("is-flipped");
-      }
-      isTouching = false;
-    });
-
-  });
-</script>
-
-<script>
+  // Mobile-only flip logic
   if (window.matchMedia("(hover: none)").matches) {
+
     document.querySelectorAll(".flip-card").forEach(card => {
+      let startX = 0;
+      let startY = 0;
       let moved = false;
 
-      card.addEventListener("touchstart", () => {
+      card.addEventListener("touchstart", e => {
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
         moved = false;
       }, { passive: true });
 
-      card.addEventListener("touchmove", () => {
-        moved = true;
+      card.addEventListener("touchmove", e => {
+        const touch = e.touches[0];
+        const dx = Math.abs(touch.clientX - startX);
+        const dy = Math.abs(touch.clientY - startY);
+
+        if (dx > 8 || dy > 8) {
+          moved = true; // user is scrolling
+        }
       }, { passive: true });
 
       card.addEventListener("touchend", () => {
@@ -506,10 +499,9 @@
         }
       });
     });
+
   }
 </script>
-
-
 
             <!-- 
         - #SERVICE
