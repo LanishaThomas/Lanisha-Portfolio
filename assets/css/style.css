@@ -103,6 +103,9 @@
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
+* {
+  outline: 1px solid red;
+}
 
 *,
 *::before,
@@ -1216,6 +1219,7 @@ input:checked + .slider:before {
 .slider-item {
   min-width: 100%;
   scroll-snap-align: start;
+  overflow-x: hidden;
 }
 
 
@@ -1900,5 +1904,10 @@ textarea.input-field {
    */
 
   .hero .container { grid-template-columns: 1fr 0.85fr; }
+
+  * {
+  outline: 1px solid rgba(255, 0, 0, 0.4);
+}
+
 
 }
