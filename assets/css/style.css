@@ -1063,11 +1063,14 @@ input:checked + .slider:before {
    =============================== */
 @media (max-width: 768px) {
 
-  /* Timeline line on left */
-  .timeline-list::before {
-    left: 18px;
-    transform: none;
-  }
+  :root {
+  --timeline-line-x: 18px;
+  --timeline-node-size: 12px;
+}
+
+.timeline-list::before {
+  left: var(--timeline-line-x);
+}
 
   /* Items stack */
   .timeline-item {
@@ -1087,10 +1090,10 @@ input:checked + .slider:before {
 
   /* Node aligned to line */
   .timeline-node {
-    left: 18px;
-    transform: none;
-    pointer-events: none;
-  }
+  width: var(--timeline-node-size);
+  height: var(--timeline-node-size);
+  left: calc(var(--timeline-line-x) - var(--timeline-node-size) / 2);
+}
 }
 
 

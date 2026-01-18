@@ -487,6 +487,29 @@
   });
 </script>
 
+<script>
+  if (window.matchMedia("(hover: none)").matches) {
+    document.querySelectorAll(".flip-card").forEach(card => {
+      let moved = false;
+
+      card.addEventListener("touchstart", () => {
+        moved = false;
+      }, { passive: true });
+
+      card.addEventListener("touchmove", () => {
+        moved = true;
+      }, { passive: true });
+
+      card.addEventListener("touchend", () => {
+        if (!moved) {
+          card.classList.toggle("is-flipped");
+        }
+      });
+    });
+  }
+</script>
+
+
 
             <!-- 
         - #SERVICE
