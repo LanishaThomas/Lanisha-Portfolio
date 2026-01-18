@@ -158,8 +158,6 @@ body {
   font-size: var(--fontSize-8);
   line-height: 1.75;
   overflow: hidden;
-  overflow-x: hidden;
-max-width:100%;
 }
 
 body.loaded { overflow-y: auto; }
@@ -1216,7 +1214,6 @@ input:checked + .slider:before {
 .slider-item {
   min-width: 100%;
   scroll-snap-align: start;
-  overflow-x: hidden;
 }
 
 
@@ -1901,7 +1898,5 @@ textarea.input-field {
    */
 
   .hero .container { grid-template-columns: 1fr 0.85fr; }
-
-
 
 }
