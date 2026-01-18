@@ -1064,36 +1064,72 @@ input:checked + .slider:before {
 @media (max-width: 768px) {
 
   :root {
-  --timeline-line-x: 18px;
-  --timeline-node-size: 12px;
-}
+    --timeline-line-x: 50%;
+    --timeline-node-size: 12px;
+  }
 
-.timeline-list::before {
-  left: var(--timeline-line-x);
-}
+    .timeline-item.left .timeline-node,
+  .timeline-item.right .timeline-node {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 
-  /* Items stack */
+  .timeline-list::before {
+    left: 50%;
+  }
+
+  /* Keep items double-sided */
   .timeline-item {
-    width: 100%;
+    width: 50%;
+    padding: 16px 12px;
+  }
+
+  .timeline-item.left {
     left: 0;
-    padding-left: 60px;
-    padding-right: 16px;
-    text-align: left;
+    text-align: right;
   }
 
-  .timeline-item.left,
   .timeline-item.right {
-    left:0;
+    left: 50%;
     text-align: left;
-    margin-left: 0
   }
 
-  /* Node aligned to line */
+  
+
+  /* Node perfectly centered on line */
   .timeline-node {
-  width: var(--timeline-node-size);
-  height: var(--timeline-node-size);
-  left: calc(var(--timeline-line-x) - var(--timeline-node-size) / 2);
-}
+    width: var(--timeline-node-size);
+    height: var(--timeline-node-size);
+    left: var(--timeline-line-x);
+    transform: translateX(-50%);
+  }
+  /* -------- Mobile font scaling -------- */
+  .timeline-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-institute {
+    font-size: 1.2rem; /* was 1.8rem */
+  }
+
+  .timeline-title {
+    font-size: 1.05rem; /* was 1.5rem */
+  }
+
+  .timeline-text {
+    font-size: 0.95rem; /* was 1.2rem */
+    line-height: 1.35;
+  }
+
+  .flip-back {
+    font-size: 1.05rem; /* was 1.5rem */
+  }
+
+  .timeline-footer {
+    font-size: 1.2rem; /* was 2rem */
+  }
 }
 
 
